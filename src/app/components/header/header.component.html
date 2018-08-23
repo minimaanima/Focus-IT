@@ -1,16 +1,16 @@
 <!-- Header -->
 <header id="header" class="header-dynamic header-shadow-scroll">
   <div class="container">
-    <a class="logo" href="home.html">
+    <a class="logo" href="/">
       <img src="/assets/img/logos/header-light.png" alt="">
     </a>
     <nav>
       <ul class="nav-primary">
           <li>
-              <a routerLink="">Начало</a>
+              <a href="/">Начало</a>
             </li>
         <li>
-          <a routerLink="price-and-services">Цени и услуги</a>
+          <a href="/price-and-services">Цени и услуги</a>
         </li>
         <li>
           <a routerLink="coverage">Покритие</a>
@@ -19,7 +19,7 @@
           <a routerLink="network">Мрежа</a>
         </li>
         <li>
-          <a routerLink="about">Информация</a>
+          <a href="/about">Информация</a>
           <ul>
             <li>
               <a routerLink="about/blog">Блог</a>
@@ -29,9 +29,14 @@
             </li>
           </ul>
         </li>
-        <li>
+        <li *ngIf="!authService.isAuthenticated()">
           <a class="button button-secondary" routerLink="auth/signin">
             <i class="fas fa-lock icon-left"></i>Вход
+          </a>
+        </li>
+        <li *ngIf="authService.isAuthenticated()">
+          <a class="button button-secondary" (click)="logout()">
+            <i class="fa fa-power-off"></i> Изход
           </a>
         </li>
       </ul>
@@ -42,7 +47,7 @@
         <li>
           <a routerLink="about/contacts"><i class="fas fa-comment icon-left"></i>Свържи се с нас</a>
         </li>
-        <li>
+        <li *ngIf="authService.isAuthenticated()">
           <a routerLink="status"><i class="fas fa-check icon-left"></i>Статус на услугата</a>
         </li>
       </ul>

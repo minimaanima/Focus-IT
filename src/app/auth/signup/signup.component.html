@@ -18,32 +18,32 @@
     <div class="container">
       <div class="column-row align-center">
         <div class="column-50">
-          <form class="form-full-width" method="get" action="https://demo.serifly.com/cloudhub/html/client-login.html">
-            <div class="form-row">
-              <div class="column-row">
-                <div class="column-50">
-                  <label for="firstName">Име</label>
-                  <input type="text" name="firstName">
-                </div>
-                <div class="column-50">
-                    <label for="lastName">Фамилия</label>
-                    <input type="text" name="lastName">
-                  </div>
-              </div>
-            </div>
+          <form class="form-full-width" #f="ngForm" (ngSubmit)="signup(f)">
             <div class="form-row">
                 <label for="form-email">Имейл Адрес</label>
-                <input id="form-email" type="password" name="email">
+                <input
+                required
+                id="form-email" 
+                type="email" 
+                name="email"
+                ngModel
+                >
               </div>
             <div class="form-row">
               <label for="form-password">Парола</label>
-              <input id="form-password" type="password" name="password">
+              <input
+              required
+              id="form-password" 
+              type="password" 
+              name="password"
+              ngModel
+              >
             </div>
             <div class="form-row">
                 <a routerLink="/auth/signin">Имате регистрация ?<i class="fas fa-angle-right icon-right"></i></a>
               </div>
             <div class="form-row">
-              <button class="button-secondary"><i class="fas fa-lock icon-left"></i>Потвърди</button>
+              <button class="button-secondary" [disabled]="f.invalid"><i class="fas fa-lock icon-left"></i>Потвърди</button>
             </div>
           </form>
         </div>

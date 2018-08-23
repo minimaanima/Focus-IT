@@ -8,8 +8,9 @@ import { AboutComponent } from './components/about/about.component';
 import { BlogComponent } from './components/blog/blog.component';
 import { ContactsComponent } from './components/contacts/contacts.component';
 import { StatusComponent } from './components/status/status.component';
-import { SigninComponent } from './components/signin/signin.component';
-import { SignupComponent } from './components/signup/signup.component';
+import { SigninComponent } from './auth/signin/signin.component';
+import { SignupComponent } from './auth/signup/signup.component';
+import { AuthGuard } from './auth/auth.guard';
 
 const routes: Route[] = [
   {path: '' , pathMatch: 'full', component: HomeComponent},
@@ -21,11 +22,11 @@ const routes: Route[] = [
     {path: 'blog' , component: BlogComponent},
   {path: 'contacts' , component: ContactsComponent}
   ]},
-  {path: 'status' , component: StatusComponent},
+  {path: 'status' , component: StatusComponent, canActivate: [AuthGuard] },
   { path: 'auth', children:[
     {path: 'signin', component: SigninComponent},
     {path: 'signup', component: SignupComponent},
-  ]},
+  ]}
 ]
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
