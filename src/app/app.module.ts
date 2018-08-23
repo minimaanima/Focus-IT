@@ -19,7 +19,8 @@ import { BlogComponent } from './components/blog/blog.component';
 import { ContactsComponent } from './components/contacts/contacts.component';
 import { SigninComponent } from './auth/signin/signin.component';
 import { SignupComponent } from './auth/signup/signup.component';
-import { StatusComponent } from './components/status/status.component'
+import { StatusComponent } from './components/status/status.component';
+import { QuestionsComponent } from './components/questions/questions.component'
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { StatusComponent } from './components/status/status.component'
     ContactsComponent,
     SigninComponent,
     SignupComponent,
-    StatusComponent
+    StatusComponent,
+    QuestionsComponent
   ],
   imports: [
     BrowserModule,
