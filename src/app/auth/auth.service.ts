@@ -19,12 +19,11 @@ export class AuthService {
     firebase.auth()
       .createUserWithEmailAndPassword(email, password)
       .then(data => {
-        this.router.navigate(['auth/signin'])
-        this.toastr.success('Successfully registered', 'Success')
+        this.signIn(email, password);
       })
       .catch(err => {
-        this.toastr.error(err.message, 'Warning')
-      })
+        this.toastr.error(err.message, 'Warning');
+      });
   }
 
   signIn(email: string, password: string) {
@@ -36,20 +35,20 @@ export class AuthService {
           .getIdToken()
           .then((token: string) => {
             this.token = token;
-          })
-        this.router.navigate(['status'])
-        this.toastr.success('Successfully logged in', 'Success')
+          });
+        this.router.navigate(['status']);
+        this.toastr.success('Successfully logged in', 'Success');
       })
       .catch(err => {
-        this.toastr.error(err.message, 'Warning')
-      })
+        this.toastr.error(err.message, 'Warning');
+      });
   }
   logout() {
     firebase.auth().signOut().then(() => {
       this.router.navigate(['auth/signin']);
       this.toastr.success('Successfully logged out', 'Success');
       this.token = null;
-    })
+    });
   }
 
   getToken() {
@@ -58,8 +57,8 @@ export class AuthService {
       .getIdToken()
       .then((token: string) => {
         this.token = token;
-      })
-    return this.token
+      });
+    return this.token;
   }
 
   isAuthenticated(): boolean {
