@@ -15,29 +15,23 @@
   </section>
 
   <!-- Article -->
-  <div>
-      <section class="content-row content-row-border-top">
+      <section *ngFor="let article of articles | async" class="content-row content-row-border-top">
           <div class="container">
             <article class="blog-article blog-article-center">
               <header class="blog-article-header">
                 <h2>
-                  <a href="blog-article.html">Мултиклауд – нов тренд в сторидж решенията</a>
+                  <a href="blog-article.html">{{article.name}}</a>
                 </h2>
-                <ul>
-                  <li>
-                    <i class="fas fa-calendar icon-left"></i>June 30, 2017
-                  </li>
-                </ul>
               </header>
               <div class="blog-article-content">
-                <img src="https://www.datacenterknowledge.com/sites/datacenterknowledge.com/files/styles/article_featured_standard/public/wp-content/uploads/2014/11/Facebook_Iowa_34.jpg?itok=P4vAAQMF"/>
+                <img src="{{article.imagePath}}" alt="{{article.name}}"/>
                 <p>
-                    В близко бъдеще все по-разпространени в анализа на големи данни ще стават хибридните сторидж системи, при които информацията се съхранява и в облака, и в собствените сървъри на компаниите. И ако това не е новост, то в същото време анализаторите говорят и за друга тенденция – т.нар. „многооблачност”, при която данните се намират не в един хиперскаларен клауд (AWS, Microsoft или Google), а едновременно в няколко по-малки облака.
+                  {{article.description}}
+                </p>
               </div>
             </article>
           </div>
         </section>
-  </div>
 
   <!-- PAGING -->
   <section class="content-row content-row-gray">

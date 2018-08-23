@@ -10,12 +10,14 @@ import { BlogService } from '../../services/blog/blog.service';
 })
 export class BlogComponent implements OnInit {
   articles: Observable<ArticleList[]>;
+
   constructor(
     private blogService: BlogService
   ) { }
 
   ngOnInit() {
-    this.articles = this.blogService.getAllArticles();
+    this.articles = this.blogService
+    .getAllArticles();
   }
 
 }
