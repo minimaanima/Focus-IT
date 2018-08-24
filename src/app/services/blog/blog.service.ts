@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { ArticleList } from '../../models/articles-list.model';
+import { ArticleCreate } from '../../models/articles-create.model';
 
 const baseUrl = 'https://focus-33a95.firebaseio.com/articles';
 
@@ -21,5 +22,8 @@ export class BlogService {
       }
       return articles;
     }));
+  }
+  createArticle(body: ArticleCreate) {
+    return this.http.post(`${baseUrl}.json`, body)
   }
 }

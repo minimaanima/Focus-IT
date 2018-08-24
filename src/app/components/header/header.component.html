@@ -50,6 +50,9 @@
         <li *ngIf="authService.isAuthenticated()">
           <a routerLink="status"><i class="fas fa-check icon-left"></i>Статус на услугата</a>
         </li>
+        <li *ngIf="authService.isAuthenticated()">
+          <a routerLink="article-create"><i class="fas fa-book icon-left"></i>Напиши статия</a>
+        </li>
       </ul>
     </nav>
   </div>

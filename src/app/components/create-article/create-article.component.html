@@ -1,0 +1,65 @@
+{{bindingModel | json }}
+<!-- Content -->
+<section id="content">
+  <!-- Content Row -->
+  <section class="content-row content-row-color content-row-clouds">
+    <div class="container">
+      <header class="content-header content-header-small content-header-uppercase">
+        <h1>
+          Свържи се с нас
+        </h1>
+        <p>
+          изпрати ни съобщение и ние ще ви отговорим в най-кратък срок
+        </p>
+      </header>
+    </div>
+  </section>
+  <!-- Content Row -->
+  <section class="content-row">
+    <div class="container">
+      <div class="column-row align-center">
+        <div class="column-50">
+          <form class="form-full-width" #f="ngForm" (ngSubmit)="create(f)">
+            <div class="form-row">
+              <div class="form-row">
+                <label for="form-subject">Тема</label>
+                <input
+                required
+                id="form-subject" 
+                type="text"
+                [(ngModel)]="bindingModel.name"
+                name="name">
+              </div>
+            </div>
+            <div class="form-row">
+              <label for="form-subject">Линк към изображение</label>
+              <input
+              required
+              id="form-subject" 
+              type="url"
+              name="imagePath"
+              [(ngModel)]="bindingModel.imagePath"
+              >
+            </div>
+            <div class="form-row">
+              <label for="form-message">Съдържание</label>
+              <textarea
+              required
+              id="form-message" 
+              name="description"
+              [(ngModel)]="bindingModel.description"
+              cols="10" 
+              rows="10"></textarea>
+            </div>
+            <div class="form-row">
+              <button class="button-secondary" [disabled]="f.invalid"><i class="fas fa-envelope icon-left"></i>Напиши статия</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- Content Row -->
+  </section>
+  <!-- Content Row -->
+</section>
+

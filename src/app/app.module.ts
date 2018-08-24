@@ -23,6 +23,7 @@ import { SignupComponent } from './auth/signup/signup.component';
 import { StatusComponent } from './components/status/status.component';
 import { QuestionsComponent } from './components/questions/questions.component';
 import { TokenInterceptor } from './interceptors/token.interceptor';
+import { CreateArticleComponent } from './components/create-article/create-article.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { TokenInterceptor } from './interceptors/token.interceptor';
     SigninComponent,
     SignupComponent,
     StatusComponent,
-    QuestionsComponent
+    QuestionsComponent,
+    CreateArticleComponent
   ],
   imports: [
     BrowserModule,
