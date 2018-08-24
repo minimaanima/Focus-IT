@@ -1,12 +1,3 @@
-/**
- * Primary Color
- *
- * Choose a value that works well with white foreground text.
- * Used for links, headers, buttons and the content row color
- * section, as well as other core elements.
- *
- * Default: #0098ef
- */
 .text-color-primary
 {
 	color: #844fe1 !important;

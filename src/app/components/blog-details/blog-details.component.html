@@ -27,11 +27,11 @@
             </article>
           </div>
         </section>
-  <section class="content-row content-row-gray">
+  <section class="content-row content-row-gray" *ngIf="isActive">
     <div class="container">
       <ul class="pagination">
             <li >
-                <a class="button" routerLink="/about/blog/{{article.id}}">Редактирай <i class="fas fa-edit icon-left"></i></a>
+                <a class="button" routerLink="/about/blog/edit/{{id}}">Редактирай <i class="fas fa-edit icon-left"></i></a>
             </li>
             <li>
                 <a class="button" (click)="delete()">Изтрий <i class="fas fa-trash-alt icon-left"></i></a>

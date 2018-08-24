@@ -64,7 +64,12 @@ export class AuthService {
   isAuthenticated(): boolean {
     return this.token != null;
   }
-
+  isAdmin(): boolean {
+    if (firebase.auth().currentUser.email === 'minimaanima@gmail.com') {
+      return true
+    }
+    return false;
+  }
   constructor(
     private toastr: ToastrService,
     private router: Router

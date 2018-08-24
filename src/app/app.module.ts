@@ -26,6 +26,7 @@ import { TokenInterceptor } from './interceptors/token.interceptor';
 import { CreateArticleComponent } from './components/create-article/create-article.component';
 import { BlogDetailsComponent } from './components/blog-details/blog-details.component';
 import { BlogEditComponent } from './components/blog-edit/blog-edit.component';
+import { AuthModule } from './auth/auth.module';
 
 @NgModule({
   declarations: [

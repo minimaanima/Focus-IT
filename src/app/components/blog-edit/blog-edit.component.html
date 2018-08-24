@@ -1,4 +1,5 @@
 <!-- Content -->
+{{bindingModel | json}}
 <section id="content">
     <!-- Content Row -->
     <section class="content-row content-row-color content-row-clouds">
@@ -15,7 +16,7 @@
       <div class="container">
         <div class="column-row align-center">
           <div class="column-50">
-            <form class="form-full-width" #f="ngForm" (ngSubmit)="create(f)">
+            <form class="form-full-width" #f="ngForm" (ngSubmit)="edit(f)">
               <div class="form-row">
                 <div class="form-row">
                   <label for="form-subject">Тема</label>
@@ -23,7 +24,9 @@
                   required
                   id="form-subject" 
                   type="text"
-                  name="name">
+                  name="name"
+                  [(ngModel)]="bindingModel.name"
+                  >
                 </div>
               </div>
               <div class="form-row">
@@ -33,6 +36,7 @@
                 id="form-subject" 
                 type="url"
                 name="imagePath"
+                [(ngModel)]="bindingModel.imagePath"
                 >
               </div>
               <div class="form-row">
@@ -42,7 +46,9 @@
                 id="form-message" 
                 name="description"
                 cols="10" 
-                rows="10"></textarea>
+                rows="10"
+                [(ngModel)]="bindingModel.description"
+                ></textarea>
               </div>
               <div class="form-row">
                 <button class="button-secondary" [disabled]="f.invalid"><i class="fas fa-envelope icon-left"></i>Напиши статия</button>

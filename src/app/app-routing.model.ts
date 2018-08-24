@@ -13,6 +13,7 @@ import { SignupComponent } from './auth/signup/signup.component';
 import { AuthGuard } from './auth/auth.guard';
 import { CreateArticleComponent } from './components/create-article/create-article.component';
 import { BlogDetailsComponent } from './components/blog-details/blog-details.component';
+import { BlogEditComponent } from './components/blog-edit/blog-edit.component';
 
 const routes: Route[] = [
   {path: '' , pathMatch: 'full', component: HomeComponent},
@@ -22,15 +23,19 @@ const routes: Route[] = [
   {path: 'network' , component: NetworkComponent},
   {path: 'about',children: [
     {path: '' , component: AboutComponent},
-    {path: 'blog' , component: BlogComponent},
-    {path: 'blog/:id' , component: BlogDetailsComponent},
-  {path: 'contacts' , component: ContactsComponent}
+    {path: 'blog' , component: BlogComponent, canActivate: [AuthGuard] },
+    {path: 'blog/:id' , component: BlogDetailsComponent, canActivate: [AuthGuard] },
+    {path: 'blog/edit/:id' , component: BlogEditComponent, canActivate: [AuthGuard] },
+    {path: 'contacts' , component: ContactsComponent}
   ]},
   {path: 'status' , component: StatusComponent, canActivate: [AuthGuard] },
   { path: 'auth', children:[
     {path: 'signin', component: SigninComponent},
     {path: 'signup', component: SignupComponent},
-  ]}
+  ]},
+  {
+    path:'**', redirectTo: '/auth/signin'
+  }
 ]
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
