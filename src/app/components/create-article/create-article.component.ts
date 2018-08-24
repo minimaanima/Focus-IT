@@ -26,7 +26,6 @@ export class CreateArticleComponent implements OnInit {
     .subscribe(data => {
       this.toastr.success('Article created !', 'Success');
       this.router.navigate(['/about/blog'])
-      console.log(data);
     })
   }
 

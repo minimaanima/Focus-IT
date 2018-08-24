@@ -26,4 +26,13 @@ export class BlogService {
   createArticle(body: ArticleCreate) {
     return this.http.post(`${baseUrl}.json`, body)
   }
+  getById(articleId : string) {
+    return this.http.get<ArticleList>(`${baseUrl}/${articleId}/.json`);
+  }
+  editArticle(body) {
+    return this.http.patch(`${baseUrl}.json`, body);
+  }
+  deleteArticle(articleId : string) {
+    return this.http.delete(`${baseUrl}/${articleId}/.json`);
+  }
 }

@@ -24,6 +24,8 @@ import { StatusComponent } from './components/status/status.component';
 import { QuestionsComponent } from './components/questions/questions.component';
 import { TokenInterceptor } from './interceptors/token.interceptor';
 import { CreateArticleComponent } from './components/create-article/create-article.component';
+import { BlogDetailsComponent } from './components/blog-details/blog-details.component';
+import { BlogEditComponent } from './components/blog-edit/blog-edit.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,9 @@ import { CreateArticleComponent } from './components/create-article/create-artic
     SignupComponent,
     StatusComponent,
     QuestionsComponent,
-    CreateArticleComponent
+    CreateArticleComponent,
+    BlogDetailsComponent,
+    BlogEditComponent
   ],
   imports: [
     BrowserModule,

@@ -20,13 +20,16 @@
             <article class="blog-article blog-article-center">
               <header class="blog-article-header">
                 <h2>
-                  <a href="blog-article.html">{{article.name}}</a>
+                  <a routerLink="{{article.id}}">{{article.name}}</a>
                 </h2>
               </header>
               <div class="blog-article-content">
                 <img src="{{article.imagePath}}" alt="{{article.name}}"/>
                 <p>
-                  {{article.description}}
+                  {{ (article.description.length>200)? (article.description | slice:0:200)+' .....':(article.description) }}
+                </p>
+                <p>
+                  <a class="button" routerLink="/about/blog/{{article.id}}">Виж Още<i class="fas fa-chevron-right icon-right"></i></a>
                 </p>
               </div>
             </article>

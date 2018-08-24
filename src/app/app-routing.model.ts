@@ -12,16 +12,18 @@ import { SigninComponent } from './auth/signin/signin.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { AuthGuard } from './auth/auth.guard';
 import { CreateArticleComponent } from './components/create-article/create-article.component';
+import { BlogDetailsComponent } from './components/blog-details/blog-details.component';
 
 const routes: Route[] = [
   {path: '' , pathMatch: 'full', component: HomeComponent},
   {path: 'price-and-services' , component: PriceAndServicesComponent},
-  {path: 'article-create' , component: CreateArticleComponent},
+  {path: 'article-create' , component: CreateArticleComponent,canActivate: [AuthGuard] },
   {path: 'coverage' , component: CoverageComponent},
   {path: 'network' , component: NetworkComponent},
   {path: 'about',children: [
     {path: '' , component: AboutComponent},
     {path: 'blog' , component: BlogComponent},
+    {path: 'blog/:id' , component: BlogDetailsComponent},
   {path: 'contacts' , component: ContactsComponent}
   ]},
   {path: 'status' , component: StatusComponent, canActivate: [AuthGuard] },
