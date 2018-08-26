@@ -14,11 +14,13 @@ import { AuthGuard } from './auth/auth.guard';
 import { CreateArticleComponent } from './components/create-article/create-article.component';
 import { BlogDetailsComponent } from './components/blog-details/blog-details.component';
 import { BlogEditComponent } from './components/blog-edit/blog-edit.component';
+import { CreateMessageComponent } from './components/create-message/create-message.component';
 
 const routes: Route[] = [
   {path: '' , pathMatch: 'full', component: HomeComponent},
   {path: 'price-and-services' , component: PriceAndServicesComponent},
   {path: 'article-create' , component: CreateArticleComponent,canActivate: [AuthGuard] },
+  {path: 'create-message' , component: CreateMessageComponent,canActivate: [AuthGuard] },
   {path: 'coverage' , component: CoverageComponent},
   {path: 'network' , component: NetworkComponent},
   {path: 'about',children: [

@@ -62,19 +62,21 @@
   <section class="content-row">
     <div class="container">
       <div class="column-row align-center">
-        <div class="column-66">
+        <div *ngIf="messages" class="column-66">
           <h3>
             Съобщения
           </h3>
-          <hr>
-          <dl>
-            <dt>October 6, 2017</dt>
-            <dd>
-              <p>
-                На 23.06 ще бъде извършена профилактика 
-              </p>
-            </dd>
-          </dl>
+          <div *ngFor="let message of messages | async">
+              <hr>
+              <dl>
+                <dt>{{message.date}}</dt>
+                <dd>
+                  <p>
+                    {{message.content}}
+                  </p>
+                </dd>
+              </dl>
+          </div>
         </div>
       </div>
     </div>

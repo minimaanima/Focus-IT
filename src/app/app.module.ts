@@ -27,6 +27,7 @@ import { CreateArticleComponent } from './components/create-article/create-artic
 import { BlogDetailsComponent } from './components/blog-details/blog-details.component';
 import { BlogEditComponent } from './components/blog-edit/blog-edit.component';
 import { AuthModule } from './auth/auth.module';
+import { CreateMessageComponent } from './components/create-message/create-message.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { AuthModule } from './auth/auth.module';
     QuestionsComponent,
     CreateArticleComponent,
     BlogDetailsComponent,
-    BlogEditComponent
+    BlogEditComponent,
+    CreateMessageComponent
   ],
   imports: [
     BrowserModule,

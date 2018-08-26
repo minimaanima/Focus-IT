@@ -1,0 +1,54 @@
+<!-- Content -->
+<section id="content">
+    <!-- Content Row -->
+    <section class="content-row content-row-color content-row-clouds">
+      <div class="container">
+        <header class="content-header content-header-small content-header-uppercase">
+          <h1>
+            Напиши съобщение
+          </h1>
+        </header>
+      </div>
+    </section>
+    <!-- Content Row -->
+    <section class="content-row">
+      <div class="container">
+        <div class="column-row align-center">
+          <div class="column-50">
+            <form class="form-full-width" #f="ngForm" (ngSubmit)="create(f)">
+              <div class="form-row">
+                <div class="column-row">
+                  <div class="column-50">
+                    <label for="form-name">Дата</label>
+                    <input
+                    required
+                    id="form-name"
+                    required
+                    type="text"
+                    [(ngModel)]="bindingModel.date"
+                    name="name"
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="form-row">
+                <label for="form-message">Съобщение</label>
+                <textarea 
+                required
+                id="form-message" 
+                name="message" 
+                cols="10" 
+                rows="10"
+                [(ngModel)]="bindingModel.content"
+                ></textarea>
+              </div>
+              <div class="form-row">
+                <button class="button button-secondary" [disabled]="f.invalid"><i class="fas fa-envelope icon-left"></i>Изпрати ни съобщение</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Content Row -->
+  </section>

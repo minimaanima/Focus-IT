@@ -23,9 +23,9 @@ export class BlogService {
       return articles;
     }));
   }
-  createArticle(body: ArticleCreate) {
-    return this.http.post(`${baseUrl}.json`, body)
-  }
+    createArticle(body: ArticleCreate) {
+      return this.http.post(`${baseUrl}.json`, body)
+    }
   getById(articleId : string) {
     return this.http.get<ArticleList>(`${baseUrl}/${articleId}/.json`);
   }

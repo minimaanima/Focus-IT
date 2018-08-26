@@ -53,6 +53,9 @@
         <li *ngIf="authService.isAuthenticated()">
           <a routerLink="article-create"><i class="fas fa-book icon-left"></i>Напиши статия</a>
         </li>
+        <li *ngIf="authService.isAuthenticated() && authService.isAdmin()">
+            <a routerLink="create-message"><i class="fas fa-book icon-left"></i>Напиши съобщение</a>
+          </li>
       </ul>
     </nav>
   </div>

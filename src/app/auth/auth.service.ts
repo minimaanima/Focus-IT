@@ -8,12 +8,14 @@ import {
 import {
   Router
 } from '@angular/router';
+import { HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
+  admin: string;
   token: string;
   signUp(email: string, password: string) {
     firebase.auth()
@@ -65,13 +67,15 @@ export class AuthService {
     return this.token != null;
   }
   isAdmin(): boolean {
-    if (firebase.auth().currentUser.email === 'minimaanima@gmail.com') {
-      return true
-    }
-    return false;
+    return this.getUser() === this.admin
+  }
+  getUser() {
+    return firebase.auth().currentUser.email
   }
   constructor(
     private toastr: ToastrService,
     private router: Router
-  ) {}
+  ) {
+    this.admin = 'minimaanima@gmail.com';
+  }
 }
